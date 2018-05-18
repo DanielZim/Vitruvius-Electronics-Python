@@ -1,0 +1,65 @@
+//Simulink *.mdl-File Parser
+
+grammar org.xtext.example.Simulink with org.eclipse.xtext.common.Terminals
+generate simulink "http://www.xtext.org/example/mydsl1/Simulink"
+import "http://www.eclipse.org/emf/2002/Ecore" as ecore
+
+
+Root: 
+	rootElement += SubElement*
+;
+
+SubElement:
+	name=ID '{' element += Element* '}'
+;
+
+Element:
+	SubElement | BaseElement | VectorElement  |MatrixElement | StringElement
+;
+
+
+BaseElement:
+	name=ID value=BaseValue
+;
+
+VectorElement:
+	name=ID '[' (value+=BaseValue)? (',' value+=BaseValue)* ']' 	
+;
+
+
+MatrixElement:
+	name=ID '[' (value+=BaseValue)? (',' value+=BaseValue)*  (';'(value+=BaseValue)? (',' value+=BaseValue)*)+  ']' 	
+;
+
+StringElement:
+	name=ID value+=STRING (value+=STRING)*
+;
+
+
+
+BaseValue:
+	FloatValue | FloatExpValue | IntValue | IdValue 	
+;
+
+FloatValue:
+	FLOAT	
+;
+
+FloatExpValue:
+	FLOAT_X
+;
+
+IntValue:
+	INT_X	
+;
+
+IdValue:
+	ID	
+;
+
+
+terminal FLOAT returns ecore::EFloat: '-'? INT '.' INT;
+terminal FLOAT_X returns ecore::EFloat: '-'? INT 'e-' INT;
+terminal INT_X returns ecore::EInt: '-'? INT;
+terminal ID: '$'?'^'?  ('a'..'z'|'A'..'Z'|'_'|'-'|'0'..'9')+ ('.'('a'..'z'|'A'..'Z'|'_'|'-'|'0'..'9')+)?;
+//terminal ID: '$'?'^'? ('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')* ('.'('a'..'z'|'A'..'Z'|'_'|'0'..'9')+)?;
