@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.109"
+    ComputedModelVersion    "1.110"
     NumModelReferences	    0
     NumTestPointedSignals   0
     NumProvidedFunctions    0
@@ -108,7 +108,7 @@ Model {
       $ObjectID		      2
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [1912.0, -8.0, 1936.0, 1056.0]
+      Location		      [2290.0, 121.0, 1936.0, 1056.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		3
@@ -171,9 +171,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "Daniel"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Fri Apr 20 15:45:46 2018"
-  RTWModifiedTimeStamp	  442776825
-  ModelVersionFormat	  "1.%<AutoIncrement:109>"
+  LastModifiedDate	  "Fri May 18 10:48:08 2018"
+  RTWModifiedTimeStamp	  448541261
+  ModelVersionFormat	  "1.%<AutoIncrement:110>"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
   LibraryLinkDisplay	  "disabled"
@@ -1051,7 +1051,7 @@ Model {
   }
   System {
     Name		    "test"
-    Location		    [1912, -8, 3848, 1048]
+    Location		    [2290, 121, 4226, 1177]
     Open		    on
     PortBlocksUseCompactNotation off
     ModelBrowserVisibility  off
@@ -1799,7 +1799,7 @@ Model {
       SID		      "37"
       Tag		      "0"
       Ports		      [0, 0, 0, 0, 0, 1, 1]
-      Position		      [1415, 336, 1455, 364]
+      Position		      [1465, 266, 1505, 294]
       ZOrder		      125
       BlockRotation	      180
       NamePlacement	      "alternate"
@@ -1917,7 +1917,7 @@ Model {
       SID		      "40"
       Tag		      "0"
       Ports		      [0, 0, 0, 0, 0, 1, 1]
-      Position		      [1616, 405, 1644, 445]
+      Position		      [1711, 405, 1739, 445]
       ZOrder		      128
       BlockRotation	      90
       HideAutomaticName	      off
@@ -2267,7 +2267,7 @@ Model {
       ZOrder		      54
       SrcBlock		      "R2"
       SrcPort		      LConn1
-      Points		      [160, 0]
+      Points		      [205, 0]
       DstBlock		      "R3"
       DstPort		      LConn1
     }
@@ -2276,6 +2276,7 @@ Model {
       ZOrder		      55
       SrcBlock		      "R2"
       SrcPort		      RConn1
+      Points		      [-75, 0; 0, 70]
       DstBlock		      "Cu1"
       DstPort		      LConn1
     }
@@ -2284,7 +2285,7 @@ Model {
       ZOrder		      60
       SrcBlock		      "Cuzi1"
       SrcPort		      RConn1
-      Points		      [240, 0]
+      Points		      [335, 0]
       DstBlock		      "R3"
       DstPort		      RConn1
     }
